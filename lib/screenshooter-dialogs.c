@@ -232,7 +232,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   GFile *file;
   gchar *base_name;
   gchar *datetime;
-  const gchar *strftime_format = "%Y-%m-%d_%H-%M-%S";
+  const gchar *strftime_format = "%s";
 
   gint i;
 
@@ -249,7 +249,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   if (!timestamp)
     base_name = g_strconcat (title, ".png", NULL);
   else
-    base_name = g_strconcat (title, "_", datetime, ".png", NULL);
+    base_name = g_strconcat (title, datetime, ".png", NULL);
 
   file = g_file_get_child (directory, base_name);
 
